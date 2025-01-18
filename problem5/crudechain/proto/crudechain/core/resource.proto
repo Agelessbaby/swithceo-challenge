@@ -1,0 +1,12 @@
+syntax = "proto3";
+package crudechain.core;
+
+option go_package = "crudechain/x/core/types";
+
+message Resource {
+  
+  uint64 id = 1; 
+  string name = 2; 
+  string description = 3; 
+  string owner = 4; 
+}
