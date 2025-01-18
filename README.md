@@ -1,3 +1,45 @@
+# Problem 5: A Crude Chain
+
+## How to Run
+
+1. Run the chain
+    ```shell
+    ignite chain serve
+   ```
+   
+2. Create Resources
+    ```shell
+    crudechaind tx core create-resource hello world --from alice --chain-id crudechain
+    crudechaind tx core create-resource hello James --from bob --chain-id crudechain
+    crudechaind tx core create-resource hello Jeff --from alice --chain-id crudechain
+    crudechaind tx core create-resource hello Jack --from bob --chain-id crudechain
+   ```
+
+3. Search Resource By Id
+    ```shell
+   crudechaind q core show-resource 1
+   ```
+   ![image.png](docs/resource1.png)
+4. Show All Resources 
+    ```shell
+   crudechaind q core list-resource
+   ```
+   ![image.png](docs/all_resources.png)
+5. Delete One Resource
+    ```shell
+   crudechaind tx core delete-resource 0 --from alice  --chain-id crudechain
+   crudechaind q core list-resource //check the resource again
+   ```
+6. Update One Resource
+    ```shell
+   crudechaind tx core  update-resource 1  "I Love" "Golang" --from alice
+   ```
+   ![image.png](docs/check_after_update.png)
+7. Filter: Filter By Name
+    ```shell
+   crudechaind q core list-resource --name hello
+   ```
+   ![image.png](docs/Filter.png)
 # Consensus-Breaking Change
 
 ## 1. What Does Breaking Consensus mean?
