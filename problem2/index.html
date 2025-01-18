@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Swap Form</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <h1>Currency Swap</h1>
+
+    <form id="swap-form">
+        <div class="input-group">
+            <label for="input-amount">Amount to Send</label>
+            <input type="number" id="input-amount" placeholder="Enter amount" required>
+        </div>
+
+        <div class="input-group">
+            <label for="from-currency">From Currency</label>
+            <div class="currency-selector">
+                <select id="from-currency">
+                    <!-- Currency options will be populated here -->
+                </select>
+                <img id="from-currency-icon" src="" alt="Currency Icon" width="30">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="to-currency">To Currency</label>
+            <div class="currency-selector">
+                <select id="to-currency">
+                    <!-- Currency options will be populated here -->
+                </select>
+                <img id="to-currency-icon" src="" alt="Currency Icon" width="30">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="output-amount">Amount to Receive</label>
+            <input type="text" id="output-amount" placeholder="Calculated amount" disabled>
+        </div>
+
+        <div class="error-message" id="error-message"></div>
+
+        <button type="submit" id="confirm-swap">Confirm Swap</button>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>

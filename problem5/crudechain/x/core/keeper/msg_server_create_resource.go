@@ -10,15 +10,12 @@ import (
 
 func (k msgServer) CreateResource(goCtx context.Context, msg *types.MsgCreateResource) (*types.MsgCreateResourceResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
-
-	// TODO: Handling the message
-	_ = ctx
-	var Resoruce = types.Resource{
+	var Resource = types.Resource{
 		Name:        msg.Name,
 		Description: msg.Description,
 		Owner:       msg.Creator,
 	}
-	id := k.AppendResource(ctx, Resoruce)
+	id := k.AppendResource(ctx, Resource)
 
 	return &types.MsgCreateResourceResponse{
 		Id: id,
